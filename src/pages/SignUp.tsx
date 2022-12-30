@@ -134,6 +134,10 @@ export const SignUp = () => {
           <FormControlLabel
             control={<Checkbox />}
             label="Terms and Conditions"
+          
+            sx={{ marginBottom: 2 }}
+           
+
           />
 
           <Button type="submit" variant="contained">

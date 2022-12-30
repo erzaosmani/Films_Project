@@ -9,7 +9,6 @@ const LoginSchema = Yup.object().shape({
   confirm: Yup.string().required("It is required to confirm your password!"),
   age: Yup.string().required("Age is required!"),
   gender: Yup.string().required("Gender is required!"),
- 
 });
 
 interface LoginFields {
