@@ -1,15 +1,11 @@
-import {Box, Button, TextField} from "@mui/material"
+import {Box} from "@mui/material"
 import { NavLink } from "react-router-dom";
-import { useLoginFormik } from "../components/Login/LoginForm/useLoginFormik";
+import { LoginForm } from "../components/Login/LoginForm/LoginForm";
+
 
 export const Login = () => {
 
-  const formik=useLoginFormik({
-    onSubmit(values, formikHelpers) {
-        console.log("Formik values");
-    },
-  });
-
+  
   return (
   <Box
   sx={{
@@ -29,46 +25,7 @@ export const Login = () => {
 
        <h1>Login</h1>
 
-       <Box 
-       component="form"
-       sx={{
-        display:"flex",
-        flexDirection:"column",
-        marginTop:4,
-      }}
-
-      noValidate
-      autoComplete="off"
-      onSubmit={formik.handleSubmit}
-       
-       >
-        <TextField
-        id="username"
-        label="username"
-        variant="outlined"
-        name="username"
-        value={formik.values.username}
-        onChange={formik.handleChange}
-        sx={{marginBottom:2}}
-        />
-
-        
-    <TextField
-
-    id="password"
-    label="password"
-    type="password"
-  variant="outlined"
-  value={formik.values.password}
-  onChange={formik.handleChange}
-  sx={{marginBottom:2}}
-
-/>
-
-<Button type="submit" variant="contained">
-      Login
-</Button>
-       </Box>
+      <LoginForm />
 
        <Box
        sx={{
