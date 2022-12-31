@@ -3,10 +3,10 @@ import * as Yup from "yup";
 import { string } from "yup/lib/locale";
 
 const LoginSchema = Yup.object().shape({
-  username: Yup.string().required("Username is required"),
-  email: Yup.string().required("Email is required"),
+  username: Yup.string().required("Username is required!"),
+  email: Yup.string().required("Email is required!"),
   password: Yup.string().required("Password is required!").min(8),
-  confirm: Yup.string().required("It is required to confirm your password!"),
+  confirm: Yup.string().required("Confirming your password is required!"),
   age: Yup.string().required("Age is required!"),
   gender: Yup.string().required("Gender is required!"),
 });

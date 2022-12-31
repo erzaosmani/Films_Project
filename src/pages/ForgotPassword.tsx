@@ -1,7 +1,13 @@
 import { Box, Button, TextField } from "@mui/material";
 import React from "react";
+import { useSignUpFormik } from "../components/SignUp/SignUpForm/useSignUpFormik";
 
 export const ForgotPassword = () => {
+  const formik = useSignUpFormik({
+    onSubmit(values, formikHelpers) {
+      console.log("Formik values", values);
+    },
+  });
   return (
     <Box
       sx={{
@@ -31,12 +37,17 @@ export const ForgotPassword = () => {
           }}
           noValidate
           autoComplete="off"
+          onSubmit={formik.handleSubmit}
         >
           <TextField
             id="email"
             label="Email"
             variant="outlined"
+            value={formik.values.email}
+            onChange={formik.handleChange}
             sx={{ marginBottom: 2 }}
+            error={formik.touched.email && !!formik.errors.email}
+            helperText={formik.errors.email}
           />
 
           <Button type="submit" variant="contained">
